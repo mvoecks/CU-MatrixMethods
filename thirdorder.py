@@ -22,7 +22,8 @@ with open('sample.txt', 'r') as f:
                         ptm[lastWord] = [word]
                     else:
                         ptm[lastWord].append(word)
-                    #again, the 2 most recent words are shifted down one position and the new word is added to the lastWord variable
+                    #again, the 2 most recent words are shifted down one position and the new word 
+                    #is added to the lastWord variable
                     lastWord = (lastWord[1], lastWord[2], word)
 
 #Randomly generated words are still calculated the same
