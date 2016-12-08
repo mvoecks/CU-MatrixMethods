@@ -20,7 +20,8 @@ with open('sample.txt', 'r') as f:
                         ptm[lastWord] = [word]
                     else:
                         ptm[lastWord].append(word)
-                    #The lastword variable still includes the most recent word and the currennt word, however the most recent word is shifted one position down.
+                    #The lastword variable still includes the most recent word and the currennt word, 
+                    #however the most recent word is shifted one position down.
                     lastWord = (lastWord[1], word)
 
 #The words are chosen in the same manner that they were in the first order example
