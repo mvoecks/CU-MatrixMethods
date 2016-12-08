@@ -1,4 +1,4 @@
-#This file generates random text based off a inputed text using a first order markov chain model
+#This file generates random text based on an input text using a first order markov chain model
 
 #import necessary libraries
 import random
@@ -21,19 +21,23 @@ with open('sample.txt', 'r') as f:
             word = word.lower()
             if word != '':
 
-                #this first if will only return true once at the very start of the algorithm, and just sets the first word of the document to the variable lastWord
+                #this first if statement will only return true once at the very start of the algorithm, 
+                #and just sets the first word of the document to the variable lastWord
                 if lastWord == '':
                     lastWord = word
 
                 #For every subsequent word in the document the following code runs
                 else:
-                    #if the previous word is not in the probability transition hashtable then add it and make its only entry the word we are processing
+                    #if the previous word is not in the probability transition hashtable then add it 
+                    #and make its only entry the word we are processing
                     if not(lastWord in ptm):
                         ptm[lastWord] = [word]
-                    #if the previous word exists in the probability transition hashtable then update its columns to include the word we are currently processing
+                    #if the previous word exists in the probability transition hashtable then update its 
+                    #columns to include the word we are currently processing
                     else:
                         ptm[lastWord].append(word)
-                    #set the variable lastWord to the word currently being processed so the next loop associates the correct words
+                    #set the variable lastWord to the word currently being processed so the next loop associates 
+                    #the correct words
                     lastWord = word
 
 #This section of the code generates the text by picking a random starting word, and then based of that random
